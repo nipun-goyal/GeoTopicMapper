@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map demo</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+     integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+     crossorigin=""></script>
+</head>
+<body>
+<div class="highlighted-box" id="toolbar">
+  <div class="slidecontainer">
+    <div class="slide-title"> Change background opacity </div>
+    <input type="range" min="0" max="100" value="40" class="slider" id="background-opacity">
+    <div class="slide-title"> Change highlight opacity </div>
+    <input type="range" min="0" max="100" value="100" class="slider" id="highlight-opacity">
+  </div>
+  <div id="highlight-type-container">
+    <div id="highlight-title"> Highlight: </div>
+    <select class="highlighted-box" id="highlight-type">
+      <option value="none" selected="selected">None</option>
+      <option value="location-type">Location Type</option>
+      <option value="topic">Topic</option>
+    </select>
+    
+    <input class="submit-button highlighted-box" id="submit-highlight" type="submit" value="Change highlight type">
+  </div>
+  <div id="locations-select">
+    <button class="button-no-active highlighted-box-no-hover location-type-button" value="dominion-land-survey">Dominion Land Survey</button>
+    <button class="button-no-active highlighted-box-no-hover location-type-button" value="national-topographic-system">National Topographic System</button>
+    <button class="button-no-active highlighted-box-no-hover location-type-button" value="latitude-longitude">Latitude/Longitude</button>
+  </div>
+  <div id="topics-select">
+    <button class="button-no-active highlighted-box-no-hover topic-button" value="1"> Topic 1 </button>
+    <button class="button-no-active highlighted-box-no-hover topic-button" value="2"> Topic 2 </button>
+    <button class="button-no-active highlighted-box-no-hover topic-button" value="3"> Topic 3 </button>
+    <button class="button-no-active highlighted-box-no-hover topic-button" value="4"> Topic 4 </button>
+    <button class="button-no-active highlighted-box-no-hover topic-button" value="5"> Topic 5 </button>
+    <button class="button-no-active highlighted-box-no-hover topic-button" value="6"> Topic 6 </button>
+    <button class="button-no-active highlighted-box-no-hover topic-button" value="7"> Topic 7 </button>
+    <button class="button-no-active highlighted-box-no-hover topic-button" value="8"> Topic 8 </button>
+    <button class="button-no-active highlighted-box-no-hover topic-button" value="9"> Topic 9 </button>
+    <button class="button-no-active highlighted-box-no-hover topic-button" value="10"> Topic 10 </button>
+    <button class="button-no-active highlighted-box-no-hover topic-button" value="11"> Topic 11 </button>
+    <button class="button-no-active highlighted-box-no-hover topic-button" value="12"> Topic 12 </button>
+    <button class="button-no-active highlighted-box-no-hover topic-button" value="13"> Topic 13 </button>
+    <button class="button-no-active highlighted-box-no-hover topic-button" value="14"> Topic 14 </button>
+    <button class="button-no-active highlighted-box-no-hover topic-button" value="15"> Topic 15 </button>
+    <button class="button-no-active highlighted-box-no-hover topic-button" value="16"> Topic 16 </button>
+    <button class="button-no-active highlighted-box-no-hover topic-button" value="17"> Topic 17 </button>
+    <button class="button-no-active highlighted-box-no-hover topic-button" value="18"> Topic 18 </button>
+    <button class="button-no-active highlighted-box-no-hover topic-button" value="19"> Topic 19 </button>
+    <div id="topic-toggle" class="highlighted-box-no-hover">
+      <button id="topic-select-all" class="submit-button highlighted-box">
+        Select All
+      </button>
+      <button id="topic-deselect-all" class="submit-button highlighted-box">
+        Deselect All
+      </button>
+    </div>
+  </div>
+</div>
+<div id="map-wrapper">
+  <div id="map">
+  </div>
+</div>
+<script src="locations.js"></script>
+<script src="topics.js"></script>
+<script src="demo.js"></script>
+</body>
+</html>
